@@ -47,11 +47,11 @@ mv idea* ideaIU-$IDEA_VERSION
 mv grails* grails-$GRAILS_VERSION
 
 # create soft links
-ln -s jdk-$JAVA_VERSION
-ln -s apache-maven-$MAVEN_VERSION
-ln -s apache-tomcat-$TOMCAT_VERSION
-ln -s ideaIU-$IDEA_VERSION
-ln -s grails-$GRAILS_VERSION
+ln -s jdk-$JAVA_VERSION java
+ln -s apache-maven-$MAVEN_VERSION apache-maven 
+ln -s apache-tomcat-$TOMCAT_VERSION apache-tomcat
+ln -s ideaIU-$IDEA_VERSION idea
+ln -s grails-$GRAILS_VERSION grails
 
 # update environment variables 
 echo 'JAVA_HOME="/opt/java"
@@ -64,9 +64,6 @@ PATH="$PATH:$M3:$JAVA_HOME/bin:$CATALINA_HOME/bin:$GRAILS_HOME/bin"' >> /etc/env
 
 # source
 source /etc/environment
-
-# run idea setup in background
-/opt/software/ideaIU-$IDEA_VERSION/bin/idea.sh &
 
 #redirect to home
 cd
